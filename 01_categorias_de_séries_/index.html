@@ -1,0 +1,799 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../02_modelos_de_dados_principais_/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Capítulo 1: A Descoberta - ScreenShare Tutorial</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-1-categorias-de-series" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="ScreenShare Tutorial" class="md-header__button md-logo" aria-label="ScreenShare Tutorial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ScreenShare Tutorial
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Capítulo 1: A Descoberta
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ScreenShare Tutorial" class="md-nav__button md-logo" aria-label="ScreenShare Tutorial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ScreenShare Tutorial
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Início
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 1: A Descoberta
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 1: A Descoberta
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-problema-generos-variados-e-em-outro-idioma" class="md-nav__link">
+    <span class="md-ellipsis">
+      O Problema: Gêneros Variados e em Outro Idioma
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-solucao-enum-categoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Solução: enum Categoria
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-a-categoria-funciona-por-dentro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como a Categoria Funciona por Dentro
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convertendo-nomes-de-generos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convertendo Nomes de Gêneros
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Convertendo Nomes de Gêneros">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fromstringstring-text-do-nome-da-api-para-o-objeto-categoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      fromString(String text): Do nome da API para o objeto Categoria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fromportuguesstring-text-do-nome-em-portugues-para-o-objeto-categoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      fromPortugues(String text): Do nome em português para o objeto Categoria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-que-acontece-se-nao-encontrar" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que acontece se não encontrar?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_modelos_de_dados_principais_/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 2: A Jornada Começa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_ponto_de_entrada_da_aplica%C3%A7%C3%A3o_/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 3: O Grande Desafio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_interface_e_orquestrador_principal_/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 4: A Floresta Sombria
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_integra%C3%A7%C3%A3o_com_api_externa__omdb__/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 5: O Aliado Inesperado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_reposit%C3%B3rio_de_dados_/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 6: A Batalha Final
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-problema-generos-variados-e-em-outro-idioma" class="md-nav__link">
+    <span class="md-ellipsis">
+      O Problema: Gêneros Variados e em Outro Idioma
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-solucao-enum-categoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Solução: enum Categoria
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-a-categoria-funciona-por-dentro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como a Categoria Funciona por Dentro
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convertendo-nomes-de-generos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convertendo Nomes de Gêneros
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Convertendo Nomes de Gêneros">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fromstringstring-text-do-nome-da-api-para-o-objeto-categoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      fromString(String text): Do nome da API para o objeto Categoria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fromportuguesstring-text-do-nome-em-portugues-para-o-objeto-categoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      fromPortugues(String text): Do nome em português para o objeto Categoria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-que-acontece-se-nao-encontrar" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que acontece se não encontrar?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-1-categorias-de-series">Chapter 1: Categorias de Séries</h1>
+<p>Bem-vindo ao primeiro capítulo do nosso tutorial sobre o projeto <code>ScreenMatch</code>! Aqui, começaremos a desvendar como o aplicativo gerencia informações sobre séries, e o ponto de partida é algo fundamental: como organizamos as séries por tipo ou gênero.</p>
+<p>Imagine que você está criando um aplicativo de catálogo de séries, como a Netflix ou o Prime Video. Uma das primeiras coisas que você precisa é poder pesquisar e organizar as séries por gênero, certo? Você esperaria ver categorias como "Comédia", "Drama" ou "Ação", e não "Comedy", "Drama" ou "Action". Além disso, é importante que seu aplicativo saiba <em>exatamente</em> quais gêneros existem para evitar erros de digitação ou categorias que não fazem sentido.</p>
+<p>É exatamente isso que o conceito de "Categorias de Séries" nos ajuda a resolver no <code>ScreenMatch</code>! Ele nos permite ter um "catálogo" pré-definido e padronizado de todos os gêneros possíveis para as séries.</p>
+<h2 id="o-problema-generos-variados-e-em-outro-idioma">O Problema: Gêneros Variados e em Outro Idioma</h2>
+<p>Nossa aplicação <code>ScreenMatch</code> buscará informações de séries de uma API externa (como o OMDB, que veremos em capítulos futuros). Essa API nos fornece os gêneros em inglês, por exemplo: "Comedy", "Action", "Romance".</p>
+<p>O desafio é duplo:
+1.  <strong>Padronização:</strong> Como garantimos que "Action" e "Ação" são a mesma coisa para o nosso sistema, e que não teremos "Ação", "ação" ou "ação!" como categorias diferentes?
+2.  <strong>Localização:</strong> Como exibimos esses gêneros em português para o usuário, mesmo que venham em inglês da API?</p>
+<h2 id="a-solucao-enum-categoria">A Solução: <code>enum</code> <code>Categoria</code></h2>
+<p>Para resolver isso, utilizamos um tipo especial no Java chamado <code>enum</code> (de "enumeração"). Pense em um <code>enum</code> como uma lista fechada e fixa de opções. Por exemplo, os dias da semana (<code>DOMINGO</code>, <code>SEGUNDA</code>, <code>TERCA</code>) ou os meses do ano (<code>JANEIRO</code>, <code>FEVEREIRO</code>, etc.). Você só pode escolher uma dessas opções pré-definidas.</p>
+<p>No <code>ScreenMatch</code>, criamos um <code>enum</code> chamado <code>Categoria</code>. Ele define quais são os gêneros aceitos e, para cada um, guarda tanto o nome que vem da API (em inglês) quanto o nome que queremos exibir para o usuário (em português).</p>
+<p>Vamos dar uma olhada na estrutura do <code>enum Categoria</code>:</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1">// src/main/java/br/com/alura/ScreenMatch/entities/Categoria.java</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">Categoria</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ROMANCE</span><span class="p">(</span><span class="s">&quot;Romance&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Romance&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="n">COMEDIA</span><span class="p">(</span><span class="s">&quot;Comedy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Comédia&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="n">DRAMA</span><span class="p">(</span><span class="s">&quot;Drama&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Drama&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="n">CRIME</span><span class="p">(</span><span class="s">&quot;Crime&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Crime&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="n">ACAO</span><span class="p">(</span><span class="s">&quot;Action&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ação&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// ... (campos e métodos internos)</span>
+<span class="p">}</span>
+</code></pre></div>
+<strong>O que vemos aqui?</strong>
+*   <code>public enum Categoria { ... }</code>: Declaração do nosso <code>enum</code> chamado <code>Categoria</code>.
+*   <code>ROMANCE("Romance", "Romance"), COMEDIA("Comedy", "Comédia"), ...</code>: Estas são as "opções" fixas, ou <strong>constantes</strong>, do nosso <code>enum</code>. Cada constante representa um gênero.
+*   <code>("Comedy", "Comédia")</code>: Para cada constante (como <code>COMEDIA</code>), passamos dois valores. O primeiro (<code>"Comedy"</code>) é o nome do gênero como ele vem da API (em inglês, <code>categoriaOmdb</code>). O segundo (<code>"Comédia"</code>) é o nome que queremos usar no nosso aplicativo (em português, <code>categoriaPortugues</code>).</p>
+<h2 id="como-a-categoria-funciona-por-dentro">Como a <code>Categoria</code> Funciona por Dentro</h2>
+<p>Cada uma dessas constantes do <code>enum</code> (<code>ROMANCE</code>, <code>COMEDIA</code>, etc.) é como um pequeno objeto que carrega consigo as duas informações: o nome em inglês e o nome em português.</p>
+<p>Vamos ver como isso é feito no código:</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1">// src/main/java/br/com/alura/ScreenMatch/entities/Categoria.java</span>
+<span class="kn">package</span><span class="w"> </span><span class="nn">br.com.alura.ScreenMatch.entities</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">Categoria</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ROMANCE</span><span class="p">(</span><span class="s">&quot;Romance&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Romance&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="n">COMEDIA</span><span class="p">(</span><span class="s">&quot;Comedy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Comédia&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="n">DRAMA</span><span class="p">(</span><span class="s">&quot;Drama&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Drama&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="n">CRIME</span><span class="p">(</span><span class="s">&quot;Crime&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Crime&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="n">ACAO</span><span class="p">(</span><span class="s">&quot;Action&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ação&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">categoriaOmdb</span><span class="p">;</span><span class="w">       </span><span class="c1">// Guarda o nome do gênero como vem da API (em inglês)</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">categoriaPortugues</span><span class="p">;</span><span class="w">  </span><span class="c1">// Guarda o nome do gênero em português</span>
+
+<span class="w">    </span><span class="c1">// Construtor: usado para inicializar cada constante do enum</span>
+<span class="w">    </span><span class="n">Categoria</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">categoriaOmdb</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">categoriaPortugues</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">categoriaOmdb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">categoriaOmdb</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">categoriaPortugues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">categoriaPortugues</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// ... (métodos para conversão)</span>
+<span class="p">}</span>
+</code></pre></div>
+*   <code>private String categoriaOmdb;</code>: Um campo que armazena o nome do gênero vindo da API externa.
+*   <code>private String categoriaPortugues;</code>: Um campo que armazena o nome do gênero em português, para uso na aplicação.
+*   <code>Categoria(String categoriaOmdb, String categoriaPortugues) { ... }</code>: Este é o <strong>construtor</strong> do <code>enum</code>. Ele é chamado automaticamente quando você define cada constante (como <code>COMEDIA("Comedy", "Comédia")</code>), pegando os dois textos e guardando-os nos campos <code>categoriaOmdb</code> e <code>categoriaPortugues</code>.</p>
+<h2 id="convertendo-nomes-de-generos">Convertendo Nomes de Gêneros</h2>
+<p>Agora, a parte mais interessante: como usamos isso para converter "Action" para "Ação"? O <code>enum Categoria</code> possui métodos especiais para isso: <code>fromString()</code> e <code>fromPortugues()</code>.</p>
+<h3 id="fromstringstring-text-do-nome-da-api-para-o-objeto-categoria"><code>fromString(String text)</code>: Do nome da API para o objeto <code>Categoria</code></h3>
+<p>Este método é crucial. Imagine que a API nos envia a string <code>"Action"</code>. Nós precisamos transformar essa string em algo que nosso aplicativo entenda como a categoria "Ação". O método <code>fromString()</code> faz exatamente isso: ele recebe uma string (geralmente da API) e tenta encontrar a constante <code>Categoria</code> correspondente.</p>
+<p>Veja como ele funciona passo a passo:</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant API as API Externa
+    participant App as Aplicação ScreenMatch
+    participant CategoriaEnum as Enum Categoria
+
+    API-&gt;App: Envia nome do gênero "Action"
+    App-&gt;CategoriaEnum: Chama Categoria.fromString("Action")
+    CategoriaEnum-&gt;CategoriaEnum: Itera por todas as constantes (ROMANCE, COMEDIA, etc.)
+    loop Para cada Categoria
+        CategoriaEnum-&gt;CategoriaEnum: Compara "Action" com o 'categoriaOmdb' da constante atual
+    end
+    CategoriaEnum--&gt;&gt;CategoriaEnum: Encontra Categoria.ACAO onde 'categoriaOmdb' é "Action"
+    CategoriaEnum-&gt;App: Retorna o objeto Categoria.ACAO
+    App-&gt;App: Agora tem o objeto Categoria.ACAO, que representa "Ação"</code></pre>
+<p>E aqui está o código desse método:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// src/main/java/br/com/alura/ScreenMatch/entities/Categoria.java</span>
+<span class="c1">// ...</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">Categoria</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ... constantes e construtor</span>
+
+<span class="w">    </span><span class="c1">// Percorre as categorias do ENUM para encontrar uma correspondência</span>
+<span class="w">    </span><span class="c1">// Usado para converter o nome da API (inglês) para a nossa Categoria</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Categoria</span><span class="w"> </span><span class="nf">fromString</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Categoria.values() retorna um array com todas as constantes do enum (ROMANCE, COMEDIA, etc.)</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Categoria</span><span class="w"> </span><span class="n">categoria</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Categoria</span><span class="p">.</span><span class="na">values</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Compara o texto recebido (ignorando maiúsculas/minúsculas)</span>
+<span class="w">            </span><span class="c1">// com o nome da categoria vindo da API (categoriaOmdb)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">categoria</span><span class="p">.</span><span class="na">categoriaOmdb</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="n">text</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">categoria</span><span class="p">;</span><span class="w"> </span><span class="c1">// Se encontrar, retorna a constante Categoria correspondente</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="c1">// Se nenhuma categoria for encontrada depois de percorrer todas, lança um erro</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;Nenhuma categoria encontrada: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">text</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// ... (fromPortugues)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Como usar?</strong></p>
+<p>Suponha que recebemos o gênero "Action" da API.</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1">// Suponha que a API retorne a string &quot;Action&quot;</span>
+<span class="n">String</span><span class="w"> </span><span class="n">generoDaApi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Action&quot;</span><span class="p">;</span>
+
+<span class="c1">// Usamos o método fromString para obter a constante Categoria correspondente</span>
+<span class="n">Categoria</span><span class="w"> </span><span class="n">categoriaObtida</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Categoria</span><span class="p">.</span><span class="na">fromString</span><span class="p">(</span><span class="n">generoDaApi</span><span class="p">);</span>
+
+<span class="c1">// O objeto &#39;categoriaObtida&#39; agora é a constante Categoria.ACAO.</span>
+<span class="c1">// Ela carrega internamente os nomes &quot;Action&quot; e &quot;Ação&quot;.</span>
+<span class="c1">// Em capítulos futuros, você verá como usar esse objeto para exibir</span>
+<span class="c1">// &quot;Ação&quot; ao usuário ou para filtrar séries.</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;O objeto Categoria encontrado é: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">categoriaObtida</span><span class="p">.</span><span class="na">name</span><span class="p">());</span>
+<span class="c1">// Saída esperada: O objeto Categoria encontrado é: ACAO</span>
+</code></pre></div>
+O método <code>name()</code> acima é um método padrão de todo <code>enum</code> em Java, que retorna o nome da constante (ex: <code>ACAO</code>). Ele nos mostra que encontramos o objeto certo!</p>
+<h3 id="fromportuguesstring-text-do-nome-em-portugues-para-o-objeto-categoria"><code>fromPortugues(String text)</code>: Do nome em português para o objeto <code>Categoria</code></h3>
+<p>Similarmente, este método faz o caminho inverso. Se o usuário digitar "Comédia" para buscar séries, podemos usar <code>fromPortugues()</code> para encontrar a constante <code>COMEDIA</code> correspondente.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// src/main/java/br/com/alura/ScreenMatch/entities/Categoria.java</span>
+<span class="c1">// ...</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">Categoria</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ... constantes e construtor</span>
+
+<span class="w">    </span><span class="c1">// ... (fromString)</span>
+
+<span class="w">    </span><span class="c1">// Percorre as categorias do ENUM para encontrar uma correspondência</span>
+<span class="w">    </span><span class="c1">// Usado para converter o nome em português (digitado pelo usuário, por exemplo)</span>
+<span class="w">    </span><span class="c1">// para a nossa Categoria</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Categoria</span><span class="w"> </span><span class="nf">fromPortugues</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Categoria</span><span class="w"> </span><span class="n">categoria</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Categoria</span><span class="p">.</span><span class="na">values</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Compara o texto recebido com o nome da categoria em português</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">categoria</span><span class="p">.</span><span class="na">categoriaPortugues</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="n">text</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">categoria</span><span class="p">;</span><span class="w"> </span><span class="c1">// Retorna a constante Categoria correspondente</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;Nenhuma categoria encontrada: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">text</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Como usar?</strong></p>
+<p>Se o usuário digitar "Comédia":</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Suponha que o usuário digitou &quot;Comédia&quot;</span>
+<span class="n">String</span><span class="w"> </span><span class="n">generoDoUsuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Comédia&quot;</span><span class="p">;</span>
+
+<span class="c1">// Usamos o método fromPortugues para obter a constante Categoria correspondente</span>
+<span class="n">Categoria</span><span class="w"> </span><span class="n">categoriaObtidaPeloUsuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Categoria</span><span class="p">.</span><span class="na">fromPortugues</span><span class="p">(</span><span class="n">generoDoUsuario</span><span class="p">);</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;O objeto Categoria encontrado é: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">categoriaObtidaPeloUsuario</span><span class="p">.</span><span class="na">name</span><span class="p">());</span>
+<span class="c1">// Saída esperada: O objeto Categoria encontrado é: COMEDIA</span>
+</code></pre></div>
+<h3 id="o-que-acontece-se-nao-encontrar">O que acontece se não encontrar?</h3>
+<p>Ambos os métodos, <code>fromString</code> e <code>fromPortugues</code>, lançam uma <code>IllegalArgumentException</code> (uma exceção, ou seja, um tipo de erro) se não conseguirem encontrar uma categoria correspondente. Isso é importante para que a aplicação saiba que um nome de gênero inválido foi fornecido e possa lidar com isso (por exemplo, avisando o usuário).</p>
+<h2 id="conclusao">Conclusão</h2>
+<p>Neste primeiro capítulo, exploramos o <code>enum Categoria</code> no <code>ScreenMatch</code>. Vimos como ele nos ajuda a:
+*   <strong>Padronizar</strong> os gêneros de séries, usando uma lista fixa de opções.
+*   <strong>Localizar</strong> os nomes dos gêneros, convertendo do inglês (da API) para o português (para o usuário).
+*   <strong>Aumentar a robustez</strong> da aplicação, garantindo que apenas gêneros válidos sejam utilizados.</p>
+<p>Essa base sólida para as categorias será essencial nos próximos passos. No próximo capítulo, vamos mergulhar nos <strong><a href="../02_modelos_de_dados_principais_/">Modelos de Dados Principais</a></strong>, onde você verá como essa <code>Categoria</code> é integrada às classes que representam as séries e os episódios.</p>
+<p>Pronto para o próximo passo? Clique aqui: <a href="../02_modelos_de_dados_principais_/">Modelos de Dados Principais</a></p>
+<hr />
+<p>Generated by <a href="https://github.com/The-Pocket/Tutorial-Codebase-Knowledge">AI Codebase Knowledge Builder</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>
