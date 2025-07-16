@@ -1,0 +1,25 @@
+# Nome do seu livro, aparecerá no topo do site
+site_name: ScreenShare Tutorial
+
+# Configuração do tema que instalamos
+theme:
+  name: material
+  language: pt  # Deixa o tema em português (ex: "Buscar")
+
+# A navegação do seu livro (o menu lateral)
+# A ordem aqui define a ordem no menu
+nav:
+  - 'Início': 'index.md'
+  - 'Capítulo 1: A Descoberta': '01_categorias_de_séries_.md'
+  - 'Capítulo 2: A Jornada Começa': '02_modelos_de_dados_principais_.md'
+  - 'Capítulo 3: O Grande Desafio': '03_ponto_de_entrada_da_aplicação_.md'
+  - 'Capítulo 4: A Floresta Sombria': '04_interface_e_orquestrador_principal_.md'
+  - 'Capítulo 5: O Aliado Inesperado': '05_integração_com_api_externa__omdb__.md'
+  - 'Capítulo 6: A Batalha Final': '06_repositório_de_dados_.md'
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
