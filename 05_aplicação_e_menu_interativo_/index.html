@@ -1,0 +1,785 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../04_reposit%C3%B3rio_de_s%C3%A9ries_/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Capítulo 5: Aplicação e menu interativo - ScreenShare Tutorial</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-5-aplicacao-e-menu-interativo" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="ScreenShare Tutorial" class="md-header__button md-logo" aria-label="ScreenShare Tutorial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ScreenShare Tutorial
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Capítulo 5: Aplicação e menu interativo
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ScreenShare Tutorial" class="md-nav__button md-logo" aria-label="ScreenShare Tutorial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ScreenShare Tutorial
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Início
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_entidades_de_dados_/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 1: Entidade de dados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_servi%C3%A7o_de_requisi%C3%A7%C3%B5es_web_/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 2: Serviço de requisições web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_conversor_de_dados_json_/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 3: Conversor de dados JSON
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_reposit%C3%B3rio_de_s%C3%A9ries_/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 4: Repositório de séries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 5: Aplicação e menu interativo
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 5: Aplicação e menu interativo
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-painel-de-controle-a-classe-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      O Painel de Controle: A Classe Principal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exibindo-o-menu-e-interagindo-com-o-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibindo o Menu e Interagindo com o Usuário
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#juntando-as-pecas-o-metodo-buscarserieweb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Juntando as Peças: O Método buscarSerieWeb()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-ponto-de-partida-a-classe-screenmatchapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      O Ponto de Partida: A Classe ScreenMatchApplication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-fluxo-completo-da-aplicacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      O Fluxo Completo da Aplicação
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-painel-de-controle-a-classe-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      O Painel de Controle: A Classe Principal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exibindo-o-menu-e-interagindo-com-o-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exibindo o Menu e Interagindo com o Usuário
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#juntando-as-pecas-o-metodo-buscarserieweb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Juntando as Peças: O Método buscarSerieWeb()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-ponto-de-partida-a-classe-screenmatchapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      O Ponto de Partida: A Classe ScreenMatchApplication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-fluxo-completo-da-aplicacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      O Fluxo Completo da Aplicação
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-5-aplicacao-e-menu-interativo">Chapter 5: Aplicação e Menu Interativo</h1>
+<p>Bem-vindo(a) ao quinto e último capítulo do nosso tutorial do ScreenMatch! Até agora, construímos os blocos essenciais do nosso aplicativo:
+*   No <a href="../01_entidades_de_dados_/">Capítulo 1: Entidades de Dados</a>, definimos a estrutura dos nossos dados (<code>Serie</code> e <code>Episodio</code>).
+*   No <a href="../02_servi%C3%A7o_de_requisi%C3%A7%C3%B5es_web_/">Capítulo 2: Serviço de Requisições Web</a>, aprendemos a buscar informações de séries na internet.
+*   No <a href="../03_conversor_de_dados_json_/">Capítulo 3: Conversor de Dados JSON</a>, vimos como transformar esses dados brutos em objetos Java úteis.
+*   No <a href="../04_reposit%C3%B3rio_de_s%C3%A9ries_/">Capítulo 4: Repositório de Séries</a>, descobrimos como salvar e recuperar nossas séries e episódios de um banco de dados.</p>
+<p>Agora, temos todas as peças do quebra-cabeça. Mas como o usuário interage com tudo isso? Como ele diz ao programa para "buscar uma série" ou "listar as séries que já salvei"?</p>
+<p>É exatamente isso que a <strong>Aplicação e Menu Interativo</strong> resolve! Ela é o "painel de controle" do nosso programa, o ponto onde o usuário se conecta com toda a funcionalidade que construímos.</p>
+<h3 id="o-painel-de-controle-a-classe-principal">O Painel de Controle: A Classe <code>Principal</code></h3>
+<p>Imagine que você tem uma orquestra cheia de músicos talentosos (nossos serviços e repositórios), mas precisa de um maestro para coordenar tudo. No nosso aplicativo, a classe <code>Principal</code> é esse maestro. Ela é responsável por:
+*   Apresentar as opções ao usuário (o menu).
+*   Receber a entrada do usuário.
+*   Chamar as partes certas do sistema (o <a href="../02_servi%C3%A7o_de_requisi%C3%A7%C3%B5es_web_/">Serviço de Requisições Web</a> para buscar, o <a href="../04_reposit%C3%B3rio_de_s%C3%A9ries_/">Repositório de Séries</a> para salvar, etc.) para executar a ação desejada.</p>
+<p><strong>Nosso Caso de Uso Central:</strong> O usuário deseja buscar uma nova série na internet, visualizar seus detalhes e salvá-la em nosso banco de dados.</p>
+<h3 id="exibindo-o-menu-e-interagindo-com-o-usuario">Exibindo o Menu e Interagindo com o Usuário</h3>
+<p>A classe <code>Principal</code> possui um método central chamado <code>exibeMenu()</code>. Este método faz um laço contínuo, mostrando as opções e esperando pela escolha do usuário.</p>
+<p>Veja uma versão simplificada de como o método <code>exibeMenu</code> funciona:</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1">// src/main/java/br/com/alura/ScreenMatch/programa/Principal.java</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Principal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span><span class="w"> </span><span class="c1">// Para ler a entrada do usuário</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">SerieRepository</span><span class="w"> </span><span class="n">serieRepository</span><span class="p">;</span><span class="w"> </span><span class="c1">// Nosso arquivista de séries</span>
+
+<span class="w">    </span><span class="c1">// O Spring &quot;injeta&quot; o SerieRepository aqui</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Principal</span><span class="p">(</span><span class="n">SerieRepository</span><span class="w"> </span><span class="n">serieRepository</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">serieRepository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">serieRepository</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">exibeMenu</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">escolha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Variável para a escolha do usuário</span>
+
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">escolha</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// O menu continua até o usuário digitar 0 (Sair)</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\n--- MENU SCREENMATCH ---&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;1: Buscar séries na web&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;2: Listar séries salvas&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;0: Sair&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Escolha uma opção: &quot;</span><span class="p">);</span>
+
+<span class="w">            </span><span class="n">escolha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w"> </span><span class="c1">// Lê a opção do usuário</span>
+<span class="w">            </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span><span class="w"> </span><span class="c1">// Consome a quebra de linha</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">escolha</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">buscarSerieWeb</span><span class="p">();</span><span class="w"> </span><span class="c1">// Chama o método para buscar séries</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">escolha</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// Em um app real, haveria um método para listar do banco de dados</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Funcionalidade de listar ainda não implementada aqui!&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">escolha</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Saindo do programa. Até mais!&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Opção inválida! Tente novamente.&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// ... outros métodos seriam definidos aqui, como buscarSerieWeb() ...</span>
+<span class="p">}</span>
+</code></pre></div>
+<strong>Explicação:</strong>
+*   <code>Scanner sc = new Scanner(System.in);</code>: Este objeto é usado para ler o que o usuário digita no teclado.
+*   <code>public Principal(SerieRepository serieRepository)</code>: Este é o construtor da classe <code>Principal</code>. O Spring Boot é inteligente e, quando ele cria uma instância de <code>Principal</code>, ele automaticamente encontra e "injeta" uma instância do <code>SerieRepository</code> para nós. Assim, a classe <code>Principal</code> tem acesso direto ao nosso "arquivista" do banco de dados.
+*   <code>while (escolha != 0)</code>: Garante que o menu continue aparecendo até que o usuário escolha a opção "Sair" (digitando <code>0</code>).
+*   <code>escolha = sc.nextInt();</code>: Lê o número digitado pelo usuário.
+*   <code>sc.nextLine();</code>: Essa linha é importante! Ela "limpa" a entrada do teclado após ler um número, para que a próxima leitura de texto não tenha problemas.
+*   <code>if (escolha == 1) { buscarSerieWeb(); }</code>: Se o usuário digitar <code>1</code>, o método <code>buscarSerieWeb()</code> é chamado, que inicia a busca de uma série.</p>
+<h3 id="juntando-as-pecas-o-metodo-buscarserieweb">Juntando as Peças: O Método <code>buscarSerieWeb()</code></h3>
+<p>Agora, vamos ver como o método <code>buscarSerieWeb()</code> orquestra a busca, conversão e salvamento de uma série, usando tudo o que aprendemos nos capítulos anteriores.</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1">// src/main/java/br/com/alura/ScreenMatch/programa/Principal.java</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">br.com.alura.ScreenMatch.entities.DadosSerie</span><span class="p">;</span><span class="w"> </span><span class="c1">// Nosso &quot;mini-cartão&quot; de dados</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">br.com.alura.ScreenMatch.entities.Serie</span><span class="p">;</span><span class="w"> </span><span class="c1">// Nossa entidade principal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">br.com.alura.ScreenMatch.service.ScreenService</span><span class="p">;</span><span class="w"> </span><span class="c1">// Nosso explorador web</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">br.com.alura.ScreenMatch.service.ConverterDados</span><span class="p">;</span><span class="w"> </span><span class="c1">// Nosso tradutor JSON</span>
+
+<span class="c1">// ... dentro da classe Principal ...</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Principal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ... campos e construtor já mostrados ...</span>
+
+<span class="w">    </span><span class="c1">// Constantes para a API do OMDb</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ENDEREÇO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;http://www.omdbapi.com/?t=&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">APIKEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&amp;apikey=a64d765c&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">ScreenService</span><span class="w"> </span><span class="n">screenService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ScreenService</span><span class="p">();</span><span class="w"> </span><span class="c1">// Instância do serviço web</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">ConverterDados</span><span class="w"> </span><span class="n">converterDados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ConverterDados</span><span class="p">();</span><span class="w"> </span><span class="c1">// Instância do conversor</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">buscarSerieWeb</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// 1. Pede o nome da série ao usuário e busca na web</span>
+<span class="w">        </span><span class="n">DadosSerie</span><span class="w"> </span><span class="n">dadosTemporarios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buscaSerie</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// 2. Cria um objeto Serie a partir dos dados temporários</span>
+<span class="w">        </span><span class="n">Serie</span><span class="w"> </span><span class="n">serieParaSalvar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Serie</span><span class="p">(</span><span class="n">dadosTemporarios</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 3. Salva a série no banco de dados usando o repositório</span>
+<span class="w">        </span><span class="n">serieRepository</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="n">serieParaSalvar</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nSérie encontrada e salva:&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">serieParaSalvar</span><span class="p">);</span><span class="w"> </span><span class="c1">// Imprime a série salva</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Método auxiliar para buscar a série e obter os dados temporários</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">DadosSerie</span><span class="w"> </span><span class="nf">buscaSerie</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Insira o nome de uma série para buscar: &quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">nomeSerie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Constrói o endereço completo da API</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ENDEREÇO</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nomeSerie</span><span class="p">.</span><span class="na">replace</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;+&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">APIKEY</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// 1. Usa o Serviço de Requisições Web para obter o JSON</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">jsonDaWeb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">screenService</span><span class="p">.</span><span class="na">obterDados</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// 2. Usa o Conversor de Dados JSON para transformar o JSON em DadosSerie</span>
+<span class="w">        </span><span class="n">DadosSerie</span><span class="w"> </span><span class="n">dadosSerie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">converterDados</span><span class="p">.</span><span class="na">obterDados</span><span class="p">(</span><span class="n">jsonDaWeb</span><span class="p">,</span><span class="w"> </span><span class="n">DadosSerie</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">dadosSerie</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<strong>Explicação:</strong>
+*   <code>DadosSerie dadosTemporarios = buscaSerie();</code>: O método <code>buscarSerieWeb</code> primeiramente chama um método auxiliar <code>buscaSerie()</code>. Este método é quem realmente faz a "viagem" até a internet e a "tradução" do JSON:
+    *   Ele solicita o nome da série ao usuário.
+    *   Constrói a URL completa para a API do OMDb, substituindo espaços por <code>+</code> (necessário para URLs).
+    *   Chama <code>screenService.obterDados(url)</code> (do <a href="../02_servi%C3%A7o_de_requisi%C3%A7%C3%B5es_web_/">Capítulo 2</a>) para obter o texto JSON da série.
+    *   Chama <code>converterDados.obterDados(jsonDaWeb, DadosSerie.class)</code> (do <a href="../03_conversor_de_dados_json_/">Capítulo 3</a>) para transformar o JSON em um objeto <code>DadosSerie</code> (nosso "mini-cartão" temporário).
+    *   Retorna esse <code>DadosSerie</code>.
+*   <code>Serie serieParaSalvar = new Serie(dadosTemporarios);</code>: Com os <code>dadosTemporarios</code> em mãos, criamos um objeto da nossa entidade <code>Serie</code> (do <a href="../01_entidades_de_dados_/">Capítulo 1</a>). A classe <code>Serie</code> tem um construtor que aceita <code>DadosSerie</code> e preenche seus próprios campos a partir dele.
+*   <code>serieRepository.save(serieParaSalvar);</code>: Finalmente, chamamos o método <code>save</code> do nosso <code>serieRepository</code> (do <a href="../04_reposit%C3%B3rio_de_s%C3%A9ries_/">Capítulo 4</a>). Isso faz com que a série seja persistida, ou seja, salva permanentemente no banco de dados!</p>
+<p><strong>Saída Esperada (Exemplo):</strong>
+<div class="highlight"><pre><span></span><code>--- MENU SCREENMATCH ---
+1: Buscar séries na web
+2: Listar séries salvas
+0: Sair
+Escolha uma opção: 1
+Insira o nome de uma série para buscar: The Office
+
+Série encontrada e salva:
+Serie{titulo=&#39;The Office&#39;, totalTemporadas=9, avaliacao=8.9, genero=COMEDIA, poster=&#39;https://m.media-amazon.com/images/M/MV5BMDNkOTE4NDQyNV5BMl5BanBnXkFtZTcwNzEzMDQ0NA@@._V1_SX300.jpg&#39;, sinopse=&#39;Um grupo de colegas de trabalho que vivem diversas situações engraçadas na Dunder Mifflin de Scranton.&#39;, atores=&#39;Steve Carell, Jenna Fischer, John Krasinski&#39;}
+</code></pre></div></p>
+<h3 id="o-ponto-de-partida-a-classe-screenmatchapplication">O Ponto de Partida: A Classe <code>ScreenMatchApplication</code></h3>
+<p>Mas como o programa começa? Em um aplicativo Spring Boot, o ponto de entrada é geralmente a classe principal com a anotação <code>@SpringBootApplication</code>. É aqui que o menu é ativado.</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1">// src/main/java/br/com/alura/ScreenMatch/ScreenMatchApplication.java</span>
+<span class="kn">package</span><span class="w"> </span><span class="nn">br.com.alura.ScreenMatch</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">br.com.alura.ScreenMatch.programa.Principal</span><span class="p">;</span><span class="w"> </span><span class="c1">// Importa nossa classe Principal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">br.com.alura.ScreenMatch.repository.SerieRepository</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.boot.CommandLineRunner</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.boot.SpringApplication</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.boot.autoconfigure.SpringBootApplication</span><span class="p">;</span>
+
+<span class="nd">@SpringBootApplication</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ScreenMatchApplication</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">CommandLineRunner</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Autowired</span>
+<span class="w">    </span><span class="n">SerieRepository</span><span class="w"> </span><span class="n">serieRepository</span><span class="p">;</span><span class="w"> </span><span class="c1">// O Spring injeta o repositório aqui</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">SpringApplication</span><span class="p">.</span><span class="na">run</span><span class="p">(</span><span class="n">ScreenMatchApplication</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span><span class="w"> </span><span class="c1">// Inicia a aplicação Spring Boot</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="n">String</span><span class="p">...</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Este método é executado assim que a aplicação Spring Boot é iniciada</span>
+<span class="w">        </span><span class="n">Principal</span><span class="w"> </span><span class="n">principal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Principal</span><span class="p">(</span><span class="n">serieRepository</span><span class="p">);</span><span class="w"> </span><span class="c1">// Cria uma nova instância do nosso menu</span>
+<span class="w">        </span><span class="n">principal</span><span class="p">.</span><span class="na">exibeMenu</span><span class="p">();</span><span class="w"> </span><span class="c1">// Chama o método que exibe o menu</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<strong>Explicação:</strong>
+*   <code>@SpringBootApplication</code>: Esta anotação diz ao Spring Boot que esta é a classe principal da sua aplicação.
+*   <code>public static void main(String[] args)</code>: O método principal do Java, que inicia o aplicativo Spring Boot.
+*   <code>implements CommandLineRunner</code>: Ao implementar esta interface, garantimos que o método <code>run()</code> será executado automaticamente assim que o aplicativo Spring Boot estiver pronto.
+*   <code>@Autowired SerieRepository serieRepository;</code>: O Spring injeta o <code>SerieRepository</code> diretamente nesta classe também, para que possamos passá-lo para o construtor da classe <code>Principal</code>.
+*   <code>Principal principal = new Principal(serieRepository);</code>: Criamos uma instância do nosso "maestro" (<code>Principal</code>), passando o <code>serieRepository</code> que o Spring nos forneceu.
+*   <code>principal.exibeMenu();</code>: Finalmente, chamamos o método <code>exibeMenu()</code>, e o painel de controle do ScreenMatch ganha vida!</p>
+<h3 id="o-fluxo-completo-da-aplicacao">O Fluxo Completo da Aplicação</h3>
+<p>Vamos visualizar como todas as partes do sistema que estudamos se conectam, desde o início do aplicativo até a interação do usuário para buscar e salvar uma série.</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant Aplicacao as ScreenMatchApplication
+    participant MenuPrincipal as Classe Principal
+    participant ServicoWeb as ScreenService
+    participant ConversorDados as ConverterDados
+    participant RepositorioDados as SerieRepository
+    participant BancoDeDados as Banco de Dados
+
+    Aplicacao-&gt;&gt;MenuPrincipal: Cria e Inicia Menu (exibeMenu())
+    MenuPrincipal-&gt;&gt;Aplicacao: Exibe Menu na Tela (opções)
+    Aplicacao-&gt;&gt;MenuPrincipal: Usuário escolhe "Buscar série" (opção 1)
+    MenuPrincipal-&gt;&gt;MenuPrincipal: Pede nome da série ao usuário
+    MenuPrincipal-&gt;&gt;ServicoWeb: obterDados(url_da_serie)
+    ServicoWeb-&gt;&gt;ServicoWeb: Faz requisição HTTP
+    ServicoWeb--&gt;&gt;ServicoWeb: Recebe JSON da internet
+    ServicoWeb--&gt;&gt;MenuPrincipal: Retorna JSON (texto)
+    MenuPrincipal-&gt;&gt;ConversorDados: obterDados(json, DadosSerie.class)
+    ConversorDados-&gt;&gt;ConversorDados: Converte JSON em objeto DadosSerie
+    ConversorDados--&gt;&gt;MenuPrincipal: Retorna objeto DadosSerie
+    MenuPrincipal-&gt;&gt;MenuPrincipal: Cria objeto Serie a partir de DadosSerie
+    MenuPrincipal-&gt;&gt;RepositorioDados: save(serie)
+    RepositorioDados-&gt;&gt;RepositorioDados: Converte para SQL (INSERT INTO)
+    RepositorioDados-&gt;&gt;BancoDeDados: Executa SQL
+    BancoDeDados--&gt;&gt;RepositorioDados: Confirma salvamento
+    RepositorioDados--&gt;&gt;MenuPrincipal: Confirmação / Objeto Serie atualizado (com ID)
+    MenuPrincipal-&gt;&gt;Aplicacao: Exibe sucesso ao usuário</code></pre>
+<ol>
+<li>O <strong><code>ScreenMatchApplication</code></strong> é iniciado pelo Spring Boot.</li>
+<li>Ele cria uma instância da <strong><code>Classe Principal</code></strong> (nosso "maestro") e pede para ela exibir o menu.</li>
+<li>A <strong><code>Classe Principal</code></strong> exibe as opções no console e espera a entrada do usuário.</li>
+<li>Quando o usuário escolhe "Buscar série", a <strong><code>Classe Principal</code></strong> solicita o nome da série.</li>
+<li>Em seguida, ela chama o <strong><code>ScreenService</code></strong> (nosso "explorador web") para obter os dados da série na internet, que retorna um texto JSON.</li>
+<li>O texto JSON é então passado para o <strong><code>ConverterDados</code></strong> (nosso "tradutor"), que o transforma em um objeto <code>DadosSerie</code> (nosso "mini-cartão" temporário).</li>
+<li>A <strong><code>Classe Principal</code></strong> usa esse <code>DadosSerie</code> para criar um objeto <code>Serie</code> completo.</li>
+<li>Finalmente, ela envia esse objeto <code>Serie</code> para o <strong><code>SerieRepository</code></strong> (nosso "arquivista"), que se encarrega de salvar a série no <strong><code>Banco de Dados</code></strong>.</li>
+<li>O resultado é exibido de volta para o usuário.</li>
+</ol>
+<h3 id="conclusao">Conclusão</h3>
+<p>Neste capítulo, você viu como todas as partes do projeto ScreenMatch se encaixam:
+*   A classe <strong><code>Principal</code></strong> atua como o maestro, coordenando a interação do usuário com os diferentes serviços.
+*   O <strong>menu interativo</strong> permite ao usuário escolher as ações, como buscar séries na web ou listar as salvas.
+*   A classe <strong><code>ScreenMatchApplication</code></strong> é o ponto de partida do nosso aplicativo, responsável por iniciar todo o sistema.</p>
+<p>O projeto ScreenMatch é um excelente exemplo de como diferentes componentes de software (entidades, serviços web, conversores, repositórios e uma interface de usuário simples) trabalham juntos para criar uma aplicação funcional. Você agora tem uma compreensão sólida de cada uma dessas partes e como elas se conectam para entregar valor ao usuário.</p>
+<p>Parabéns por chegar até aqui! Agora você tem o conhecimento para explorar e expandir o ScreenMatch, adicionando novas funcionalidades e aprimorando sua experiência.</p>
+<hr />
+<p>Generated by <a href="https://github.com/The-Pocket/Tutorial-Codebase-Knowledge">AI Codebase Knowledge Builder</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>

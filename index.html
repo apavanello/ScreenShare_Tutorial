@@ -10,7 +10,7 @@
       
       
       
-        <link rel="next" href="01_categorias_de_s%C3%A9ries_/">
+        <link rel="next" href="01_entidades_de_dados_/">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -244,7 +244,7 @@
         <li class="md-nav__item">
   <a href="#capitulos" class="md-nav__link">
     <span class="md-ellipsis">
-      Capítulos
+      Capitulos
     </span>
   </a>
   
@@ -265,12 +265,12 @@
   
   
     <li class="md-nav__item">
-      <a href="01_categorias_de_s%C3%A9ries_/" class="md-nav__link">
+      <a href="01_entidades_de_dados_/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Capítulo 1: A Descoberta
+    Capítulo 1: Entidade de dados
     
   </span>
   
@@ -287,12 +287,12 @@
   
   
     <li class="md-nav__item">
-      <a href="02_modelos_de_dados_principais_/" class="md-nav__link">
+      <a href="02_servi%C3%A7o_de_requisi%C3%A7%C3%B5es_web_/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Capítulo 2: A Jornada Começa
+    Capítulo 2: Serviço de requisições web
     
   </span>
   
@@ -309,12 +309,12 @@
   
   
     <li class="md-nav__item">
-      <a href="03_ponto_de_entrada_da_aplica%C3%A7%C3%A3o_/" class="md-nav__link">
+      <a href="03_conversor_de_dados_json_/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Capítulo 3: O Grande Desafio
+    Capítulo 3: Conversor de dados JSON
     
   </span>
   
@@ -331,12 +331,12 @@
   
   
     <li class="md-nav__item">
-      <a href="04_interface_e_orquestrador_principal_/" class="md-nav__link">
+      <a href="04_reposit%C3%B3rio_de_s%C3%A9ries_/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Capítulo 4: A Floresta Sombria
+    Capítulo 4: Repositório de séries
     
   </span>
   
@@ -353,34 +353,12 @@
   
   
     <li class="md-nav__item">
-      <a href="05_integra%C3%A7%C3%A3o_com_api_externa__omdb__/" class="md-nav__link">
+      <a href="05_aplica%C3%A7%C3%A3o_e_menu_interativo_/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Capítulo 5: O Aliado Inesperado
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="06_reposit%C3%B3rio_de_dados_/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Capítulo 6: A Batalha Final
+    Capítulo 5: Aplicação e menu interativo
     
   </span>
   
@@ -419,7 +397,7 @@
         <li class="md-nav__item">
   <a href="#capitulos" class="md-nav__link">
     <span class="md-ellipsis">
-      Capítulos
+      Capitulos
     </span>
   </a>
   
@@ -442,35 +420,40 @@
 
 
 <h1 id="tutorial-screenmatch">Tutorial: ScreenMatch</h1>
-<p>O projeto <code>ScreenMatch</code> é uma aplicação de desktop projetada para ajudar usuários a <em>descobrir</em> e <em>gerenciar</em> informações sobre séries de TV. Ela permite que você <strong>busque por séries</strong> utilizando uma API externa (como a OMDB), <strong>armazene seus detalhes</strong> (incluindo episódios) em um banco de dados para referência futura, e <em>navegue</em> por sua coleção salva por diversos critérios como gênero ou ator.</p>
-<p><strong>Repositório do Código-Fonte:</strong> <a href="https://github.com/IuryRibeiro1/ScreenMatch">https://github.com/IuryRibeiro1/ScreenMatch</a></p>
+<p>O projeto ScreenMatch é um <em>aplicativo interativo</em> que permite ao usuário <strong>buscar informações</strong> sobre séries de TV e seus episódios. Ele se conecta a uma API externa (OMDb) para <em>obter dados em tempo real</em> e gerencia uma <strong>coleção local</strong> dessas séries e episódios, permitindo diversas consultas e filtros. É a interface principal para interagir com os dados de entretenimento.</p>
+<p><strong>Source Repository:</strong> <a href="https://github.com/IuryRibeiro1/ScreenMatch">https://github.com/IuryRibeiro1/ScreenMatch</a></p>
 <pre class="mermaid"><code>flowchart TD
-    A0["Lógica Principal da Aplicação"]
-    A1["Modelos de Dados da Série"]
-    A2["Persistência de Dados (Repositório)"]
-    A3["Comunicação com API Externa (Cliente HTTP)"]
-    A4["Transformação de Dados JSON"]
-    A5["Categorização de Séries"]
-    A0 -- "Gerencia a persistência" --&gt; A2
-    A0 -- "Busca dados brutos" --&gt; A3
-    A0 -- "Transforma JSON" --&gt; A4
-    A0 -- "Usa os modelos de dados" --&gt; A1
-    A0 -- "Converte categorias" --&gt; A5
-    A1 -- "Usa o enum de gênero" --&gt; A5
-    A2 -- "Persiste os modelos" --&gt; A1
-    A2 -- "Filtra por gênero" --&gt; A5
-    A4 -- "Preenche os modelos" --&gt; A1</code></pre>
-<h2 id="capitulos">Capítulos</h2>
+    A0["Aplicação e Menu Interativo
+"]
+    A1["Entidades de Dados
+"]
+    A2["Repositório de Séries
+"]
+    A3["Serviço de Requisições Web
+"]
+    A4["Conversor de Dados JSON
+"]
+    A0 -- "Solicita dados web" --&gt; A3
+    A0 -- "Utiliza para converter" --&gt; A4
+    A0 -- "Gerencia persistência" --&gt; A2
+    A0 -- "Manipula objetos" --&gt; A1
+    A2 -- "Armazena/Consulta" --&gt; A1
+    A4 -- "Gera objetos" --&gt; A1</code></pre>
+<h2 id="capitulos">Capitulos</h2>
 <ol>
-<li><a href="https://www.google.com/search?q=01_categorias_de_s%C3%A9ries_.md">Categorias de Séries</a></li>
-<li><a href="https://www.google.com/search?q=02_modelos_de_dados_principais_.md">Modelos de Dados Principais</a></li>
-<li><a href="https://www.google.com/search?q=03_ponto_de_entrada_da_aplica%C3%A7%C3%A3o_.md">Ponto de Entrada da Aplicação</a></li>
-<li><a href="https://www.google.com/search?q=04_interface_e_orquestrador_principal_.md">Interface e Orquestrador Principal</a></li>
-<li><a href="https://www.google.com/search?q=05_integra%C3%A7%C3%A3o_com_api_externa__omdb__.md">Integração com API Externa (OMDB)</a></li>
-<li><a href="https://www.google.com/search?q=06_reposit%C3%B3rio_de_dados_.md">Repositório de Dados</a></li>
+<li><a href="01_entidades_de_dados_/">Entidades de Dados
+</a></li>
+<li><a href="02_servi%C3%A7o_de_requisi%C3%A7%C3%B5es_web_/">Serviço de Requisições Web
+</a></li>
+<li><a href="03_conversor_de_dados_json_/">Conversor de Dados JSON
+</a></li>
+<li><a href="04_reposit%C3%B3rio_de_s%C3%A9ries_/">Repositório de Séries
+</a></li>
+<li><a href="05_aplica%C3%A7%C3%A3o_e_menu_interativo_/">Aplicação e Menu Interativo
+</a></li>
 </ol>
 <hr />
-<p>Gerado por <a href="https://github.com/The-Pocket/Tutorial-Codebase-Knowledge">AI Codebase Knowledge Builder</a></p>
+<p>Generated by <a href="https://github.com/The-Pocket/Tutorial-Codebase-Knowledge">AI Codebase Knowledge Builder</a></p>
 
 
 

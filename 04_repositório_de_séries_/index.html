@@ -1,0 +1,712 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../03_conversor_de_dados_json_/">
+      
+      
+        <link rel="next" href="../05_aplica%C3%A7%C3%A3o_e_menu_interativo_/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Capítulo 4: Repositório de séries - ScreenShare Tutorial</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-4-repositorio-de-series" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="ScreenShare Tutorial" class="md-header__button md-logo" aria-label="ScreenShare Tutorial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ScreenShare Tutorial
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Capítulo 4: Repositório de séries
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ScreenShare Tutorial" class="md-nav__button md-logo" aria-label="ScreenShare Tutorial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ScreenShare Tutorial
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Início
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_entidades_de_dados_/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 1: Entidade de dados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_servi%C3%A7o_de_requisi%C3%A7%C3%B5es_web_/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 2: Serviço de requisições web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_conversor_de_dados_json_/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 3: Conversor de dados JSON
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 4: Repositório de séries
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 4: Repositório de séries
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-arquivista-do-nosso-banco-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      O "Arquivista" do Nosso Banco de Dados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceito-chave-jparepository-a-magica-do-spring-data-jpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceito Chave: JpaRepository - A Mágica do Spring Data JPA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-usar-o-repositorio-salvando-e-buscando-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como Usar o Repositório: Salvando e Buscando Séries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-dentro-do-repositorio-a-magica-por-tras-da-cena" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por Dentro do Repositório: A Mágica por Trás da Cena
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_aplica%C3%A7%C3%A3o_e_menu_interativo_/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 5: Aplicação e menu interativo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-arquivista-do-nosso-banco-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      O "Arquivista" do Nosso Banco de Dados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceito-chave-jparepository-a-magica-do-spring-data-jpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceito Chave: JpaRepository - A Mágica do Spring Data JPA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-usar-o-repositorio-salvando-e-buscando-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como Usar o Repositório: Salvando e Buscando Séries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-dentro-do-repositorio-a-magica-por-tras-da-cena" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por Dentro do Repositório: A Mágica por Trás da Cena
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-4-repositorio-de-series">Chapter 4: Repositório de Séries</h1>
+<p>Bem-vindo(a) ao quarto capítulo do nosso tutorial do ScreenMatch! Nos capítulos anteriores, montamos a base para que nosso aplicativo pudesse entender e obter informações sobre séries. No <a href="../01_entidades_de_dados_/">Capítulo 1: Entidades de Dados</a>, definimos como as informações de <code>Serie</code> e <code>Episodio</code> seriam organizadas. No <a href="../02_servi%C3%A7o_de_requisi%C3%A7%C3%B5es_web_/">Capítulo 2: Serviço de Requisições Web</a>, aprendemos a buscar esses dados brutos na internet. E no <a href="../03_conversor_de_dados_json_/">Capítulo 3: Conversor de Dados JSON</a>, vimos como transformar esses dados brutos em objetos Java úteis.</p>
+<p>Agora que temos nossos objetos <code>Serie</code> e <code>Episodio</code> bonitinhos e preenchidos, o que fazemos com eles? Se desligarmos o programa, todas essas informações se perdem! Precisamos de uma forma de guardar esses dados permanentemente, encontrá-los facilmente mais tarde, atualizá-los ou até mesmo deletá-los.</p>
+<p>É exatamente para isso que serve o <strong>Repositório de Séries</strong>!</p>
+<h3 id="o-arquivista-do-nosso-banco-de-dados">O "Arquivista" do Nosso Banco de Dados</h3>
+<p>Imagine o <strong>Repositório de Séries</strong> como o "arquivista" ou "bibliotecário" do seu banco de dados. Ele é o responsável exclusivo por todas as tarefas relacionadas a <strong>guardar, buscar, atualizar e deletar</strong> informações sobre as séries e seus episódios.</p>
+<p><strong>Qual problema ele resolve?</strong>
+Sem o repositório, toda vez que quiséssemos salvar uma série, teríamos que escrever um código complexo para interagir diretamente com o banco de dados (por exemplo, usando comandos SQL). Isso seria trabalhoso e propenso a erros.</p>
+<p>O repositório simplifica tudo! Em vez de o seu programa precisar saber os detalhes de como "conversar" com o banco de dados, ele apenas pede ao Repositório para, por exemplo, "salvar esta nova série" ou "encontrar todas as séries de um ator". O Repositório cuida de toda a complexidade por trás dos panos.</p>
+<p><strong>Nosso principal caso de uso aqui:</strong>
+Vamos focar em como o Repositório nos permite <strong>salvar uma nova série</strong> no banco de dados e <strong>buscá-la</strong> posteriormente.</p>
+<h3 id="conceito-chave-jparepository-a-magica-do-spring-data-jpa">Conceito Chave: <code>JpaRepository</code> - A Mágica do Spring Data JPA</h3>
+<p>No ScreenMatch, usamos uma ferramenta poderosa do ecossistema Spring chamada <strong>Spring Data JPA</strong>. Ela nos ajuda a interagir com o banco de dados de uma maneira muito elegante e com pouquíssimo código.</p>
+<p>O coração dessa interação é a interface <code>JpaRepository</code>.</p>
+<p><strong>Por que uma <code>interface</code> e não uma <code>classe</code>?</strong>
+Uma <code>interface</code> é como um "contrato" ou um "plano" que define o que uma classe deve ser capaz de fazer. A mágica é que o Spring Data JPA é tão inteligente que ele <strong>automaticamente cria uma classe</strong> que implementa essa interface para você, no momento em que seu programa inicia. Essa classe gerada sabe como conversar com o banco de dados!</p>
+<p>Veja a nossa interface <code>SerieRepository</code>:</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1">// src/main/java/br/com/alura/ScreenMatch/repository/SerieRepository.java</span>
+<span class="kn">package</span><span class="w"> </span><span class="nn">br.com.alura.ScreenMatch.repository</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">br.com.alura.ScreenMatch.entities.Serie</span><span class="p">;</span><span class="w"> </span><span class="c1">// Importa nossa entidade Serie</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.jpa.repository.JpaRepository</span><span class="p">;</span><span class="w"> </span><span class="c1">// A interface mágica!</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.springframework.data.jpa.repository.Query</span><span class="p">;</span><span class="w"> </span><span class="c1">// Para consultas mais complexas</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Optional</span><span class="p">;</span>
+
+<span class="c1">// A interface do nosso repositório para a entidade Serie</span>
+<span class="c1">// &lt;Serie, Long&gt; indica que ele gerencia a entidade Serie e o ID dela é do tipo Long</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">SerieRepository</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">Serie</span><span class="p">,</span><span class="w"> </span><span class="n">Long</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// Método que o Spring Data JPA entende automaticamente!</span>
+<span class="w">    </span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Serie</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findByTituloContainingIgnoreCase</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nomeSerie</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Exemplo de outro método que o Spring Data JPA entende pelo nome</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Serie</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">findTop5ByOrderByAvaliacaoDesc</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Exemplo de uma consulta mais complexa, escrita em JPQL (parecido com SQL)</span>
+<span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;select s from Serie s WHERE s.totalTemporadas &lt;= :totalTemporadas AND s.avaliacao &gt;= :avaliacao &quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Serie</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">seriePorTemporadaEAvaliacao</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">totalTemporadas</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">avaliacao</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// ... outros métodos seriam definidos aqui ...</span>
+<span class="p">}</span>
+</code></pre></div>
+<strong>Explicação:</strong>
+*   <code>public interface SerieRepository extends JpaRepository&lt;Serie, Long&gt;</code>: É aqui que a mágica começa!
+    *   <code>SerieRepository</code>: É o nome da nossa interface, nosso "arquivista" para séries.
+    *   <code>extends JpaRepository</code>: Diz ao Spring que esta interface vai herdar todos os métodos básicos de um repositório (como <code>save</code> para salvar, <code>findById</code> para buscar por ID, <code>findAll</code> para buscar todos, etc.) sem que a gente precise escrevê-los.
+    *   <code>&lt;Serie, Long&gt;</code>: Os dois tipos dentro do <code>&lt; &gt;</code> são importantes:
+        *   <code>Serie</code>: É a <strong>Entidade de Dados</strong> (do <a href="../01_entidades_de_dados_/">Capítulo 1: Entidades de Dados</a>) que este repositório vai gerenciar.
+        *   <code>Long</code>: É o tipo de dado da <strong>chave primária (ID)</strong> da sua entidade <code>Serie</code>. (Lembre-se que em <code>Serie.java</code> definimos <code>private Long id;</code>).
+*   <code>Optional&lt;Serie&gt; findByTituloContainingIgnoreCase(String nomeSerie)</code>: Este é um exemplo de um método que o Spring Data JPA consegue implementar <strong>apenas pelo nome!</strong>
+    *   <code>findBy</code>: Indica que estamos buscando (find) algo.
+    *   <code>Titulo</code>: Indica que a busca será pelo campo <code>titulo</code> da nossa entidade <code>Serie</code>.
+    *   <code>ContainingIgnoreCase</code>: Diz para buscar títulos que "contenham" (<code>Containing</code>) a <code>nomeSerie</code> que passarmos, ignorando se é maiúscula ou minúscula (<code>IgnoreCase</code>).
+    *   <code>Optional&lt;Serie&gt;</code>: O retorno é um <code>Optional</code> porque a série pode ou não ser encontrada.
+*   <code>@Query(...)</code>: Para buscas mais complexas ou que não seguem o padrão de nomes do Spring Data JPA, podemos escrever nossas próprias "consultas" usando a anotação <code>@Query</code>. A linguagem dentro do <code>@Query</code> é chamada <strong>JPQL</strong>, que é muito parecida com SQL, mas trabalha com os nomes das suas classes e campos Java (<code>Serie s</code> em vez de <code>series</code>).</p>
+<h3 id="como-usar-o-repositorio-salvando-e-buscando-series">Como Usar o Repositório: Salvando e Buscando Séries</h3>
+<p>Agora que temos nossa interface <code>SerieRepository</code>, vamos ver como usá-la para salvar e buscar séries.</p>
+<p>Imagine que você já tem um objeto <code>Serie</code> pronto para ser salvo (talvez você o tenha criado a partir dos dados obtidos da internet e convertidos nos capítulos anteriores).</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1">// Em alguma parte da sua aplicação, geralmente na classe principal (Main)</span>
+<span class="c1">// ou em um serviço que gerencia a lógica de negócio.</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">br.com.alura.ScreenMatch.entities.Serie</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">br.com.alura.ScreenMatch.repository.SerieRepository</span><span class="p">;</span><span class="w"> </span><span class="c1">// Nosso repositório</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Optional</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ExemploUsoRepositorio</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">SerieRepository</span><span class="w"> </span><span class="n">repositorio</span><span class="p">;</span><span class="w"> </span><span class="c1">// O Spring &quot;injeta&quot; este objeto para nós</span>
+
+<span class="w">    </span><span class="c1">// Construtor ou método para configurar o repositório</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ExemploUsoRepositorio</span><span class="p">(</span><span class="n">SerieRepository</span><span class="w"> </span><span class="n">repositorio</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">repositorio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repositorio</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">demonstrarUso</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// --- CENÁRIO 1: Salvando uma nova série ---</span>
+<span class="w">        </span><span class="n">Serie</span><span class="w"> </span><span class="n">novaSerie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Serie</span><span class="p">();</span>
+<span class="w">        </span><span class="n">novaSerie</span><span class="p">.</span><span class="na">setTitulo</span><span class="p">(</span><span class="s">&quot;The Witcher&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">novaSerie</span><span class="p">.</span><span class="na">setTotalTemporadas</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="w">        </span><span class="n">novaSerie</span><span class="p">.</span><span class="na">setAvaliacao</span><span class="p">(</span><span class="mf">8.2</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// ... definir outros campos como genero, sinopse, etc. ...</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tentando salvar a série: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">novaSerie</span><span class="p">.</span><span class="na">getTitulo</span><span class="p">());</span>
+<span class="w">        </span><span class="n">repositorio</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="n">novaSerie</span><span class="p">);</span><span class="w"> </span><span class="c1">// A LINHA MÁGICA: SALVA NO BANCO!</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Série salva com sucesso! ID gerado: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">novaSerie</span><span class="p">.</span><span class="na">getId</span><span class="p">());</span>
+
+<span class="w">        </span><span class="c1">// --- CENÁRIO 2: Buscando uma série pelo título ---</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">tituloParaBuscar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;witcher&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nBuscando série com título contendo: &#39;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tituloParaBuscar</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;&#39;&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Serie</span><span class="o">&gt;</span><span class="w"> </span><span class="n">serieEncontrada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repositorio</span><span class="p">.</span><span class="na">findByTituloContainingIgnoreCase</span><span class="p">(</span><span class="n">tituloParaBuscar</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">serieEncontrada</span><span class="p">.</span><span class="na">isPresent</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Série encontrada: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">serieEncontrada</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">getTitulo</span><span class="p">());</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Avaliação: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">serieEncontrada</span><span class="p">.</span><span class="na">get</span><span class="p">().</span><span class="na">getAvaliacao</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Nenhuma série encontrada com o título: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tituloParaBuscar</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<strong>Explicação:</strong>
+1.  <code>private SerieRepository repositorio;</code>: Declaramos uma variável do tipo da nossa interface <code>SerieRepository</code>. O Spring cuida de criar e fornecer uma instância real dessa interface para nós, com todas as funcionalidades.
+2.  <code>repositorio.save(novaSerie);</code>: É assim que você salva uma série! Você passa o objeto <code>Serie</code> para o método <code>save</code>, e o Spring Data JPA faz todo o trabalho de gerar o comando SQL <code>INSERT</code> e executá-lo no banco de dados. Se a série já existe e tem um ID, ele fará um <code>UPDATE</code>.
+3.  <code>Optional&lt;Serie&gt; serieEncontrada = repositorio.findByTituloContainingIgnoreCase(tituloParaBuscar);</code>: Para buscar, chamamos o método que definimos na interface. Ele retorna um <code>Optional&lt;Serie&gt;</code>, que é uma forma segura de lidar com resultados que podem não existir (evita erros se a série não for encontrada).
+4.  <code>if (serieEncontrada.isPresent()) { ... }</code>: Verificamos se a série foi realmente encontrada antes de tentar acessar seus dados com <code>serieEncontrada.get()</code>.</p>
+<p><strong>Saída Esperada (Exemplo):</strong>
+<div class="highlight"><pre><span></span><code>Tentando salvar a série: The Witcher
+Série salva com sucesso! ID gerado: 1 (ou outro número)
+
+Buscando série com título contendo: &#39;witcher&#39;
+Série encontrada: The Witcher
+Avaliação: 8.2
+</code></pre></div></p>
+<h3 id="por-dentro-do-repositorio-a-magica-por-tras-da-cena">Por Dentro do Repositório: A Mágica por Trás da Cena</h3>
+<p>Você notou que nunca escrevemos uma linha de SQL (<code>INSERT</code>, <code>SELECT</code>, <code>UPDATE</code>)? Essa é a grande vantagem do Spring Data JPA e do <code>JpaRepository</code>.</p>
+<p><strong>O que acontece quando você chama <code>repositorio.save(novaSerie)</code> ou <code>repositorio.findByTitulo(...)</code>?</strong></p>
+<ol>
+<li><strong>Sua Aplicação</strong> (o código que você escreveu) chama um método na interface <code>SerieRepository</code> (por exemplo, <code>save</code> ou <code>findByTitulo</code>).</li>
+<li>Como <code>SerieRepository</code> é uma <code>interface</code>, ela não tem implementação própria. Mas o <strong>Spring Data JPA</strong> é configurado para "escutar" essas chamadas.</li>
+<li>No momento em que seu aplicativo é iniciado, o <strong>Spring Data JPA</strong> automaticamente cria uma <strong>classe invisível</strong> que implementa a interface <code>SerieRepository</code>. Essa classe gerada sabe como traduzir as chamadas dos seus métodos (como <code>save</code> ou <code>findByTituloContainingIgnoreCase</code>) para comandos SQL reais.</li>
+<li>Essa classe gerada se conecta ao <strong>Banco de Dados</strong> (que pode ser um PostgreSQL, MySQL, H2, etc.).</li>
+<li>Ela então envia o comando SQL apropriado para o banco.</li>
+<li>O <strong>Banco de Dados</strong> executa o comando e retorna o resultado (por exemplo, "salvo com sucesso" ou os dados da série encontrada).</li>
+<li>A classe gerada pelo <strong>Spring Data JPA</strong> pega o resultado do banco, o transforma de volta em objetos Java (<code>Serie</code> ou <code>List&lt;Serie&gt;</code>) e o entrega de volta para a sua <code>SerieRepository</code> (a "interface" que você chamou).</li>
+<li>Finalmente, o resultado (o objeto <code>Serie</code> salvo, ou a <code>Optional&lt;Serie&gt;</code> encontrada) é retornado para a <strong>Sua Aplicação</strong>.</li>
+</ol>
+<p>Visualize o fluxo:</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant Aplicacao as Sua Aplicação
+    participant SerieRepositoryInterface as SerieRepository (Interface)
+    participant SpringDataJPA as Spring Data JPA (A Mágica)
+    participant BancoDeDados as Banco de Dados
+
+    Aplicacao-&gt;&gt;SerieRepositoryInterface: repositorio.save(novaSerie)
+    SerieRepositoryInterface-&gt;&gt;SpringDataJPA: Chamar método 'save'
+    SpringDataJPA-&gt;&gt;SpringDataJPA: Converte 'save' em SQL (INSERT INTO ...)
+    SpringDataJPA-&gt;&gt;BancoDeDados: Executa SQL (INSERT)
+    BancoDeDados--&gt;&gt;SpringDataJPA: Confirmação / ID gerado
+    SpringDataJPA--&gt;&gt;SerieRepositoryInterface: Retorna Serie atualizada
+    SerieRepositoryInterface--&gt;&gt;Aplicacao: Serie salva (com ID)
+
+    Aplicacao-&gt;&gt;SerieRepositoryInterface: repositorio.findByTituloContainingIgnoreCase("titulo")
+    SerieRepositoryInterface-&gt;&gt;SpringDataJPA: Chamar método 'findByTituloContainingIgnoreCase'
+    SpringDataJPA-&gt;&gt;SpringDataJPA: Converte nome em SQL (SELECT * FROM ... WHERE titulo ILIKE '%titulo%')
+    SpringDataJPA-&gt;&gt;BancoDeDados: Executa SQL (SELECT)
+    BancoDeDados--&gt;&gt;SpringDataJPA: Retorna dados da série (se houver)
+    SpringDataJPA-&gt;&gt;SpringDataJPA: Converte dados para objeto Serie
+    SpringDataJPA--&gt;&gt;SerieRepositoryInterface: Retorna Optional&lt;Serie&gt;
+    SerieRepositoryInterface--&gt;&gt;Aplicacao: Optional&lt;Serie&gt;</code></pre>
+<p>É importante notar que o Spring Data JPA cuida de toda a "burocracia" de conectar, enviar SQL e converter resultados, permitindo que você se concentre na lógica de negócio do seu aplicativo.</p>
+<h3 id="conclusao">Conclusão</h3>
+<p>Neste capítulo, você aprendeu sobre o <strong>Repositório de Séries</strong> e como ele é fundamental para a persistência de dados no ScreenMatch:
+*   Ele atua como o "arquivista" exclusivo para gerenciar as informações de <code>Serie</code> e <code>Episodio</code> no banco de dados.
+*   Você conheceu a poderosa interface <code>JpaRepository</code> do Spring Data JPA, que nos dá métodos prontos para salvar, buscar e manipular dados sem escrever SQL.
+*   Entendeu como o Spring Data JPA gera automaticamente a implementação do repositório para você, traduzindo chamadas de métodos Java para comandos de banco de dados.
+*   Viu como usar métodos como <code>save</code> e <code>findByTituloContainingIgnoreCase</code> para persistir e recuperar informações.</p>
+<p>Agora que sabemos como obter dados da internet, convertê-los em objetos Java, e guardá-los de forma permanente, estamos prontos para a etapa final: juntar todas essas peças e construir a <strong>Aplicação e Menu Interativo</strong>! No próximo capítulo, você verá como tudo isso se conecta para criar uma experiência completa para o usuário.</p>
+<p>Pronto para o próximo passo? Acesse <a href="../05_aplica%C3%A7%C3%A3o_e_menu_interativo_/">Capítulo 5: Aplicação e Menu Interativo</a>!</p>
+<hr />
+<p>Generated by <a href="https://github.com/The-Pocket/Tutorial-Codebase-Knowledge">AI Codebase Knowledge Builder</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>

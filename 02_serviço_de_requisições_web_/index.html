@@ -1,0 +1,706 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../01_entidades_de_dados_/">
+      
+      
+        <link rel="next" href="../03_conversor_de_dados_json_/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Capítulo 2: Serviço de requisições web - ScreenShare Tutorial</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-2-servico-de-requisicoes-web" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="ScreenShare Tutorial" class="md-header__button md-logo" aria-label="ScreenShare Tutorial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ScreenShare Tutorial
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Capítulo 2: Serviço de requisições web
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ScreenShare Tutorial" class="md-nav__button md-logo" aria-label="ScreenShare Tutorial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ScreenShare Tutorial
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Início
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_entidades_de_dados_/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 1: Entidade de dados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 2: Serviço de requisições web
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 2: Serviço de requisições web
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-necessidade-de-explorar-a-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Necessidade de "Explorar" a Internet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-funciona-a-viagem-digital" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como Funciona a "Viagem" Digital?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nosso-explorador-em-acao-a-classe-screenservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nosso "Explorador" em Ação: A Classe ScreenService
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-dentro-do-screenservice-como-ele-constroi-a-requisicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por Dentro do ScreenService: Como Ele Constrói a Requisição
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_conversor_de_dados_json_/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 3: Conversor de dados JSON
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_reposit%C3%B3rio_de_s%C3%A9ries_/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 4: Repositório de séries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_aplica%C3%A7%C3%A3o_e_menu_interativo_/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 5: Aplicação e menu interativo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-necessidade-de-explorar-a-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Necessidade de "Explorar" a Internet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-funciona-a-viagem-digital" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como Funciona a "Viagem" Digital?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nosso-explorador-em-acao-a-classe-screenservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nosso "Explorador" em Ação: A Classe ScreenService
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-dentro-do-screenservice-como-ele-constroi-a-requisicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por Dentro do ScreenService: Como Ele Constrói a Requisição
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-2-servico-de-requisicoes-web">Chapter 2: Serviço de Requisições Web</h1>
+<p>Bem-vindo(a) ao segundo capítulo do nosso tutorial do ScreenMatch! No <a href="../01_entidades_de_dados_/">Capítulo 1: Entidades de Dados</a>, aprendemos como organizar as informações sobre séries e episódios dentro do nosso programa. Vimos que temos "cartões" (nossas entidades <code>Serie</code> e <code>Episodio</code>) prontos para guardar todos os detalhes.</p>
+<p>Mas de onde vêm esses detalhes? Nosso aplicativo não nasce sabendo tudo sobre "Stranger Things" ou "The Crown". Ele precisa buscar essas informações em algum lugar. E é exatamente aí que entra o <strong>Serviço de Requisições Web</strong>!</p>
+<h3 id="a-necessidade-de-explorar-a-internet">A Necessidade de "Explorar" a Internet</h3>
+<p>Imagine que você está organizando sua coleção de DVDs e quer adicionar um filme novo que acabou de ver. Você não sabe todos os detalhes de cabeça (diretor, elenco completo, sinopse). O que você faz? Provavelmente, pega seu celular e pesquisa no Google ou em um site especializado como o IMDb.</p>
+<p>No mundo da programação, nosso aplicativo faz algo parecido. Para obter dados sobre uma série que ainda não temos, ele precisa "perguntar" a um serviço na internet.</p>
+<p>Nosso <strong>Serviço de Requisições Web</strong> funciona como um "explorador" digital. Você diz a ele o que procurar (o título da série, por exemplo), e ele faz a "viagem" pela internet, busca a "resposta" (os dados da série em formato de texto especial chamado JSON) e a entrega de volta ao programa. Ele é essencial para trazer para dentro do nosso aplicativo dados de séries que ainda não estão salvas localmente.</p>
+<h3 id="como-funciona-a-viagem-digital">Como Funciona a "Viagem" Digital?</h3>
+<p>Vamos detalhar o processo de como o nosso "explorador" consegue os dados:</p>
+<ol>
+<li>
+<p><strong>O Destino (URI):</strong> Primeiro, o explorador precisa saber para onde ir. Na internet, isso é um endereço, como um "CEP" digital, chamado <strong>URI</strong> (Uniform Resource Identifier). No nosso caso, o destino será a API (Application Programming Interface) do OMDb (Open Movie Database), que é um banco de dados de filmes e séries.</p>
+</li>
+<li>
+<p><strong>A Pergunta (Requisição HTTP):</strong> Uma vez no destino, o explorador precisa "fazer a pergunta" de uma forma que o site entenda. Isso é chamado de <strong>Requisição HTTP</strong>. É como uma mensagem que diz: "Olá, OMDb! Poderia me dar os dados da série 'Game of Thrones'?".</p>
+</li>
+<li>
+<p><strong>O Mensageiro (HTTP Client):</strong> Para enviar essa pergunta, precisamos de um "mensageiro" especializado. No Java, usamos o <code>HttpClient</code>, que é como um carteiro super eficiente que sabe enviar e receber mensagens pela internet.</p>
+</li>
+<li>
+<p><strong>A Resposta (Resposta HTTP e JSON):</strong> O OMDb, ao receber a pergunta, processa-a e envia de volta uma <strong>Resposta HTTP</strong>. Dentro dessa resposta, vem o "pacote de dados", que geralmente está no formato <strong>JSON</strong> (JavaScript Object Notation). JSON é um jeito padronizado de organizar informações em texto, como uma lista bem estruturada de características e seus valores (ex: "título": "Stranger Things", "avaliação": "8.7").</p>
+</li>
+</ol>
+<p>Veja como essa interação acontece:</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant Aplicacao as Sua Aplicação
+    participant ScreenService as Nosso Explorador
+    participant HttpClient as Mensageiro
+    participant OMDbAPI as OMDb API (Fonte de Dados)
+
+    Aplicacao-&gt;&gt;ScreenService: "Busque 'Stranger Things' na internet!"
+    ScreenService-&gt;&gt;HttpClient: "Mensageiro, envie esta Requisição HTTP para a OMDb API."
+    HttpClient-&gt;&gt;OMDbAPI: (Envia Requisição HTTP - URL com título)
+    OMDbAPI--&gt;&gt;HttpClient: (Envia Resposta HTTP - dados em JSON)
+    HttpClient--&gt;&gt;ScreenService: "Aqui está a resposta!"
+    ScreenService-&gt;&gt;Aplicacao: (Entrega os dados JSON)</code></pre>
+<h3 id="nosso-explorador-em-acao-a-classe-screenservice">Nosso "Explorador" em Ação: A Classe <code>ScreenService</code></h3>
+<p>No ScreenMatch, o papel de "explorador" é desempenhado pela classe <code>ScreenService</code>. Ela tem um método principal chamado <code>obterDados</code> que faz toda essa "viagem" por você.</p>
+<p>Vamos ver como usamos ele:</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1">// No seu código principal (ex: na classe Main)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">br.com.alura.ScreenMatch.service.ScreenService</span><span class="p">;</span><span class="w"> </span><span class="c1">// Importamos nosso explorador</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ExemploUso</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ScreenService</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ScreenService</span><span class="p">();</span><span class="w"> </span><span class="c1">// Criamos um novo explorador</span>
+
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">enderecoApi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://www.omdbapi.com/?t=Game+of+Thrones&amp;apikey=SUA_CHAVE_AQUI&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Pedimos para o explorador obter os dados</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">dadosJson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="p">.</span><span class="na">obterDados</span><span class="p">(</span><span class="n">enderecoApi</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Dados obtidos da internet (formato JSON):&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">dadosJson</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<strong>Explicação:</strong>
+*   <code>ScreenService service = new ScreenService();</code>: Aqui, criamos uma "instância" do nosso explorador. É como tirar o explorador da caixa e prepará-lo para a viagem.
+*   <code>String enderecoApi = "...";</code>: Este é o "endereço" completo para onde o explorador deve ir. Ele inclui o título da série (<code>t=Game+of+Thrones</code>) e, <strong>muito importante</strong>, a sua chave de API (<code>apikey=SUA_CHAVE_AQUI</code>). Essa chave é como uma permissão para usar o serviço do OMDb, e você precisa obter a sua no site deles.
+*   <code>String dadosJson = service.obterDados(enderecoApi);</code>: Essa é a chamada ao nosso explorador! Pedimos a ele para ir até o <code>enderecoApi</code> e trazer os dados. Ele retorna uma <code>String</code> (um texto) que é o JSON com as informações da série.</p>
+<p><strong>Saída Esperada (Exemplo resumido):</strong>
+<div class="highlight"><pre><span></span><code>Dados obtidos da internet (formato JSON):
+{&quot;Title&quot;:&quot;Game of Thrones&quot;,&quot;Year&quot;:&quot;2011–2019&quot;,&quot;Rated&quot;:&quot;TV-MA&quot;, ... &quot;imdbRating&quot;:&quot;9.2&quot;, ... &quot;Response&quot;:&quot;True&quot;}
+</code></pre></div>
+Você verá um grande texto, que é o JSON puro, com todos os detalhes da série.</p>
+<h3 id="por-dentro-do-screenservice-como-ele-constroi-a-requisicao">Por Dentro do <code>ScreenService</code>: Como Ele Constrói a Requisição</h3>
+<p>Agora, vamos abrir a caixa preta e ver como a classe <code>ScreenService</code> faz a mágica acontecer. Ela está no arquivo <code>src/main/java/br/com/alura/ScreenMatch/service/ScreenService.java</code>:</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1">// src/main/java/br/com/alura/ScreenMatch/service/ScreenService.java</span>
+<span class="kn">package</span><span class="w"> </span><span class="nn">br.com.alura.ScreenMatch.service</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.net.URI</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.net.http.HttpClient</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.net.http.HttpRequest</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.net.http.HttpResponse</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ScreenService</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">obterDados</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">dados</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// 1. Criar o mensageiro HTTP</span>
+<span class="w">        </span><span class="n">HttpClient</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HttpClient</span><span class="p">.</span><span class="na">newHttpClient</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// 2. Montar a &quot;pergunta&quot; (requisição) com o endereço</span>
+<span class="w">        </span><span class="n">HttpRequest</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HttpRequest</span><span class="p">.</span><span class="na">newBuilder</span><span class="p">()</span>
+<span class="w">                </span><span class="p">.</span><span class="na">uri</span><span class="p">(</span><span class="n">URI</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">dados</span><span class="p">))</span><span class="w"> </span><span class="c1">// O &quot;dados&quot; que recebemos é o endereço</span>
+<span class="w">                </span><span class="p">.</span><span class="na">build</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// 3. Enviar a pergunta e esperar pela resposta</span>
+<span class="w">        </span><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpResponse</span><span class="p">.</span><span class="na">BodyHandlers</span><span class="p">.</span><span class="na">ofString</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Em caso de erro de conexão (ex: internet caiu)</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="s">&quot;Erro de IO ao obter dados: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">InterruptedException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Em caso de interrupção (ex: programa foi parado enquanto esperava)</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="s">&quot;Requisição interrompida: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// 4. Extrair o corpo da resposta (o JSON)</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">json</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="na">body</span><span class="p">();</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">json</span><span class="p">;</span><span class="w"> </span><span class="c1">// Devolve o texto JSON</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<strong>Análise linha a linha:</strong></p>
+<ol>
+<li>
+<p><code>HttpClient client = HttpClient.newHttpClient();</code></p>
+<ul>
+<li>Aqui, criamos nosso "mensageiro" HTTP. Ele será o responsável por enviar a requisição e receber a resposta.</li>
+</ul>
+</li>
+<li>
+<p><code>HttpRequest request = HttpRequest.newBuilder().uri(URI.create(dados)).build();</code></p>
+<ul>
+<li>Esta linha constrói a "pergunta" (a requisição).</li>
+<li><code>HttpRequest.newBuilder()</code>: Inicia o processo de construção de uma requisição.</li>
+<li><code>.uri(URI.create(dados))</code>: Define o endereço (URI) para onde a requisição será enviada. O <code>dados</code> que passamos para o método <code>obterDados</code> é justamente esse endereço completo.</li>
+<li><code>.build()</code>: Finaliza a construção da requisição.</li>
+</ul>
+</li>
+<li>
+<p><code>response = client.send(request, HttpResponse.BodyHandlers.ofString());</code></p>
+<ul>
+<li>Esta é a linha mais importante! O "mensageiro" (<code>client</code>) realmente <code>send</code> (envia) a <code>request</code> (pergunta) para a internet.</li>
+<li><code>HttpResponse.BodyHandlers.ofString()</code>: Diz ao mensageiro para esperar a resposta como um texto (<code>String</code>).</li>
+<li>O resultado dessa operação é um <code>HttpResponse&lt;String&gt;</code>, que contém a resposta completa do servidor (incluindo o JSON).</li>
+</ul>
+</li>
+<li>
+<p><code>String json = response.body();</code></p>
+<ul>
+<li>Finalmente, pegamos o "corpo" da resposta (<code>response.body()</code>), que é onde o texto JSON está.</li>
+</ul>
+</li>
+<li>
+<p><code>return json;</code></p>
+<ul>
+<li>Devolvemos esse texto JSON para quem chamou o método <code>obterDados</code>.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Tratamento de Erros (<code>try-catch</code>):</strong>
+As seções <code>try { ... } catch (IOException e) { ... } catch (InterruptedException e) { ... }</code> são essenciais para lidar com problemas. Imagine que o mensageiro tente entregar a carta, mas a internet caiu (<code>IOException</code>), ou o programa é desligado no meio da espera (<code>InterruptedException</code>). O <code>try-catch</code> evita que nosso programa trave, permitindo que ele "capture" e trate esses erros de forma elegante.</p>
+<h3 id="conclusao">Conclusão</h3>
+<p>Neste capítulo, você aprendeu sobre o <strong>Serviço de Requisições Web</strong> e como ele é fundamental para o ScreenMatch:
+*   Ele atua como um "explorador" que busca dados na internet, especificamente na API do OMDb.
+*   Vimos o fluxo de uma requisição web: do endereço (URI) à pergunta (Requisição HTTP) e à resposta (Resposta HTTP com JSON).
+*   Exploramos a classe <code>ScreenService</code> e seu método <code>obterDados</code>, que utiliza o <code>HttpClient</code> para realizar essa comunicação.
+*   Entendemos que o resultado dessa "viagem" é um texto no formato JSON, cheio de informações sobre a série.</p>
+<p>Mas espere! Obtivemos um texto JSON. Como transformamos esse texto em objetos <code>Serie</code> e <code>Episodio</code> que nosso programa entende, como vimos no <a href="../01_entidades_de_dados_/">Capítulo 1: Entidades de Dados</a>?</p>
+<p>É isso que descobriremos no próximo capítulo, onde apresentaremos o <a href="../03_conversor_de_dados_json_/">Conversor de Dados JSON</a>!</p>
+<hr />
+<p>Generated by <a href="https://github.com/The-Pocket/Tutorial-Codebase-Knowledge">AI Codebase Knowledge Builder</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>
